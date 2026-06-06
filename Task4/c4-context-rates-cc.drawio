@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="c4-context-rates" name="C4 Context — ставки в КЦ">
+    <mxGraphModel dx="1362" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="950" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_cc" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=11;labelBackgroundColor=#FFFFFF;" value="&lt;b&gt;Оператор&lt;br&gt;КЦ банка&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#424242;&quot;&gt;[Person]&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="40" x="60" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p_pcc" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=11;labelBackgroundColor=#FFFFFF;" value="&lt;b&gt;Оператор&lt;br&gt;партнёрского КЦ&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#424242;&quot;&gt;[Person]&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="40" x="1320" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p_bo" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=11;labelBackgroundColor=#FFFFFF;" value="&lt;b&gt;Менеджер&lt;br&gt;бэк-офиса&lt;br&gt;депозитов&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#424242;&quot;&gt;[Person]&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="40" x="420" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="p_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=11;labelBackgroundColor=#FFFFFF;" value="&lt;b&gt;Администратор&lt;br&gt;ИТ&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#424242;&quot;&gt;[Person]&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="40" x="910" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1168BD;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="420" width="900" x="280" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_main" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#FFFFFF;fontSize=12;align=center;" value="&lt;b&gt;Распространение депозитных&lt;br&gt;ставок в кол-центры&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Software System]&lt;/font&gt;&lt;br&gt;&lt;br&gt;Доставка актуальных ставок&lt;br&gt;внутреннему и партнёрскому КЦ" vertex="1">
+          <mxGeometry height="110" width="300" x="580" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_cc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#FFFFFF;fontSize=11;align=center;" value="&lt;b&gt;Система&lt;br&gt;кол-центра банка&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Software System]&lt;/font&gt;&lt;br&gt;Spring Boot, React&lt;br&gt;UC-10, UC-11" vertex="1">
+          <mxGeometry height="85" width="170" x="320" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_abs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#FFFFFF;fontSize=11;align=center;" value="&lt;b&gt;АБС&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Software System]&lt;/font&gt;&lt;br&gt;Delphi, Oracle&lt;br&gt;UC-7, UC-14" vertex="1">
+          <mxGeometry height="85" width="170" x="580" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_pcc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#666666;fontColor=#FFFFFF;fontSize=11;align=center;dashed=1;" value="&lt;b&gt;Система партнёрского&lt;br&gt;кол-центра&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[External System]&lt;/font&gt;&lt;br&gt;UC-12, UC-13" vertex="1">
+          <mxGeometry height="85" width="180" x="960" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_sftp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#666666;fontColor=#FFFFFF;fontSize=11;align=center;dashed=1;" value="&lt;b&gt;SFTP-сервер банка&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[External Infrastructure]&lt;/font&gt;&lt;br&gt;Обмен файлами ставок" vertex="1">
+          <mxGeometry height="75" width="170" x="965" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="p_cc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#707070;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;" target="sys_cc" value="Консультирует&lt;br&gt;по ставкам">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="p_pcc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#707070;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;" target="sys_pcc" value="Консультирует&lt;br&gt;по ставкам из файла">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="p_bo" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#707070;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;" target="sys_abs" value="Обновляет ставки">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="sys_cc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1168BD;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;" target="sys_abs" value="Справочник ставок&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;[REST/HTTPS, read-only]&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="sys_abs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1168BD;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;" target="sys_sftp" value="Файл ставок CSV&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;[SFTP upload]&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="sys_pcc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999999;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;dashed=1;" target="sys_sftp" value="Загрузка файла&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;[SFTP download]&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="p_admin" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#707070;strokeWidth=2;endArrow=block;html=1;fontColor=#333333;fontSize=10;labelBackgroundColor=#FFFFFF;" target="sys_abs" value="Мониторинг&lt;br&gt;выгрузок (UC-15)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#D6B656;fontColor=#212121;fontSize=10;align=left;spacingLeft=8;" value="&lt;b&gt;Ключевое решение:&lt;/b&gt; единый источник ставок — АБС (ADR-001). Внутренний КЦ — REST + кэш. Партнёр — только SFTP-файлы (+R15). Без ПДн в выгрузке (F28)." vertex="1">
+          <mxGeometry height="45" width="520" x="280" y="820" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
