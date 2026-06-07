@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="c4-container-rates" name="C4 Container — ставки в КЦ">
+    <mxGraphModel dx="809" dy="507" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_cc" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=10;labelBackgroundColor=#FFFFFF;" value="Оператор&lt;br&gt;КЦ банка" vertex="1">
+          <mxGeometry height="50" width="30" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p_pcc" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=10;labelBackgroundColor=#FFFFFF;" value="Оператор&lt;br&gt;партнёр. КЦ" vertex="1">
+          <mxGeometry height="50" width="30" x="1520" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p_bo" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#212121;fontSize=10;labelBackgroundColor=#FFFFFF;" value="Бэк-офис&lt;br&gt;депозитов" vertex="1">
+          <mxGeometry height="50" width="30" x="370" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="b_cc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1168BD;strokeWidth=2;verticalAlign=top;fontColor=#1168BD;fontSize=11;align=left;spacingLeft=5;" value="&lt;b&gt;Система кол-центра банка&lt;/b&gt; [Spring Boot, React, PostgreSQL]" vertex="1">
+          <mxGeometry height="350" width="320" x="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cc_fe" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;Frontend КЦ&lt;/b&gt;&lt;br&gt;[Container: React]&lt;br&gt;Справочник ставок, виджет&lt;br&gt;в карточке обращения&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;UC-10, UC-11 · U4&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="200" x="220" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cc_be" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;Backend КЦ&lt;/b&gt;&lt;br&gt;[Container: Spring Boot]&lt;br&gt;API справочника, кэш ставок&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;TTL 15 мин · P5&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="220" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cc_db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;PostgreSQL КЦ&lt;/b&gt;&lt;br&gt;Кэш ставок, заявки" vertex="1">
+          <mxGeometry height="70" width="160" x="240" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="b_abs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1168BD;strokeWidth=2;verticalAlign=top;fontColor=#1168BD;fontSize=11;align=left;spacingLeft=5;" value="&lt;b&gt;АБС&lt;/b&gt; [Delphi, Oracle]" vertex="1">
+          <mxGeometry height="480" width="600" x="520" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c_rates_mod" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;Модуль ставок депозитов&lt;/b&gt;&lt;br&gt;[Container: Delphi]&lt;br&gt;Ведение ставок, версионирование&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;UC-7 · событие DepositRatesUpdated&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="220" x="550" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="c_adapter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;ABS Integration Adapter&lt;/b&gt;&lt;br&gt;[Container: Spring Boot]&lt;br&gt;REST API каталога ставок" vertex="1">
+          <mxGeometry height="70" width="220" x="550" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="c_export" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;Rates Export Service&lt;/b&gt;&lt;br&gt;[Container: Spring Boot, новый]&lt;br&gt;CSV, SFTP-upload, журнал&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;UC-14, UC-15 · F26&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="220" x="840" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="c_oracle" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;БД АБС&lt;/b&gt;&lt;br&gt;[Container: Oracle]&lt;br&gt;Ставки, продукты" vertex="1">
+          <mxGeometry height="85" width="180" x="570" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="c_export_log" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;fontSize=10;align=center;" value="&lt;b&gt;Журнал выгрузок&lt;/b&gt;&lt;br&gt;[PostgreSQL]" vertex="1">
+          <mxGeometry height="70" width="160" x="870" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="b_pcc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;strokeWidth=2;dashed=1;verticalAlign=top;fontColor=#666666;fontSize=11;align=left;spacingLeft=5;" value="&lt;b&gt;Система партнёрского КЦ&lt;/b&gt; [External]" vertex="1">
+          <mxGeometry height="180" width="280" x="1180" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pcc_crm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#666666;fontColor=#FFFFFF;fontSize=10;align=center;dashed=1;" value="&lt;b&gt;CRM партнёра&lt;/b&gt;&lt;br&gt;[External Container]&lt;br&gt;Импорт CSV, справочник&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;UC-12, UC-13&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="1220" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sftp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#666666;fontColor=#FFFFFF;fontSize=10;align=center;dashed=1;" value="&lt;b&gt;SFTP-сервер банка&lt;/b&gt;&lt;br&gt;[External]&lt;br&gt;/outbound/deposit_rates/" vertex="1">
+          <mxGeometry height="65" width="200" x="1220" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="e_actor_fe" edge="1" parent="1" source="p_cc" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_cc_fe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fe_be" edge="1" parent="1" source="c_cc_fe" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_cc_be">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_be_db" edge="1" parent="1" source="c_cc_be" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_cc_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_be_adapter" edge="1" parent="1" source="c_cc_be" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;fontColor=#333333;fontSize=9;labelBackgroundColor=#FFFFFF;" target="c_adapter" value="REST rates&lt;br&gt;[HTTPS]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bo_rates" edge="1" parent="1" source="p_bo" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_rates_mod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_rates_oracle" edge="1" parent="1" source="c_rates_mod" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_oracle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_rates_export" edge="1" parent="1" source="c_rates_mod" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;fontColor=#333333;fontSize=9;labelBackgroundColor=#FFFFFF;dashed=1;" target="c_export" value="DepositRatesUpdated">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_adapter_oracle" edge="1" parent="1" source="c_adapter" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_oracle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_export_oracle" edge="1" parent="1" source="c_export" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_oracle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_export_log" edge="1" parent="1" source="c_export" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_export_log">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_export_sftp" edge="1" parent="1" source="c_export" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;fontColor=#333333;fontSize=9;labelBackgroundColor=#FFFFFF;" target="c_sftp" value="SFTP put&lt;br&gt;CSV v1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pcc_sftp" edge="1" parent="1" source="c_pcc_crm" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;fontColor=#333333;fontSize=9;labelBackgroundColor=#FFFFFF;dashed=1;" target="c_sftp" value="SFTP get">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pcc_actor" edge="1" parent="1" source="p_pcc" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="c_pcc_crm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#D6B656;fontColor=#212121;fontSize=10;align=left;spacingLeft=8;" value="&lt;b&gt;Новые контейнеры (ADR-002):&lt;/b&gt; Rates Export Service, кэш ставок в Backend КЦ, UI справочника. Остальное — из ADR-001." vertex="1">
+          <mxGeometry height="40" width="620" x="520" y="880" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
